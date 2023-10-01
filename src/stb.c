@@ -9,6 +9,7 @@
 #define STBI_ONLY_JPEG
 #define STBI_ONLY_BMP
 #define STBI_ONLY_GIF
+#define STBI_ONLY_PNM
 
 #include <easyexif/exif.h>
 #include <easyexif/exif.cpp>

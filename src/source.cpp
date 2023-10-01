@@ -1218,6 +1218,8 @@ static int check_valid_extention(wchar_t *EXT) {
 //    else if (wcscmp(ext, L".bmp")  == 0)	result = TYPE_STB_IMAGE;
 	if (wcscmp(ext, L".gif")  == 0)	result = TYPE_GIF;
     else if (wcscmp(ext, L".webp") == 0)	result = TYPE_WEBP;
+    else if (wcscmp(ext, L".ppm")  == 0)	result = TYPE_STB_IMAGE;
+    else if (wcscmp(ext, L".pgm")  == 0)	result = TYPE_STB_IMAGE;
 	// WIC formats:
 	else if (wcscmp(ext, L".3fr")   == 0)   result = TYPE_MISC;
 	else if (wcscmp(ext, L".ari") 	== 0)   result = TYPE_MISC;
@@ -1835,7 +1837,7 @@ void file_open_dialogue() {
 	CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
     HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, 
             IID_IFileOpenDialog, reinterpret_cast<void**>(&dialogue));
-	COMDLG_FILTERSPEC extensions[] = {  { L"Images", L"*.3fr;*.ari;*.arw;*.avci;*.avcs;*.avif;*.avifs;*.bay;*.bmp;*.cap;*.cr2;*.cr3;*.crw;*.cur;*.dcr;*.dcs;*.dds;*.dib;*.dng;*.drf;*.eip;*.erf;*.exif;*.fff;*.gif;*.heic;*.heics;*.heif;*.heifs;*.hif;*.ico;*.icon;*.iiq;*.jfif;*.jpe;*.jpeg;*.jpg;*.jxr;*.k25;*.kdc;*.mef;*.mos;*.mrw;*.nef;*.nrw;*.orf;*.ori;*.pef;*.png;*.ptx;*.pxn;*.raf;*.raw;*.rle;*.rw2;*.rwl;*.sr2;*.srf;*.srw;*.tif;*.tiff;*.wdp;*.webp;*.x3f" },
+	COMDLG_FILTERSPEC extensions[] = {  { L"Images", L"*.3fr;*.ari;*.arw;*.avci;*.avcs;*.avif;*.avifs;*.bay;*.bmp;*.cap;*.cr2;*.cr3;*.crw;*.cur;*.dcr;*.dcs;*.dds;*.dib;*.dng;*.drf;*.eip;*.erf;*.exif;*.fff;*.gif;*.heic;*.heics;*.heif;*.heifs;*.hif;*.ico;*.icon;*.iiq;*.jfif;*.jpe;*.jpeg;*.jpg;*.jxr;*.k25;*.kdc;*.mef;*.mos;*.mrw;*.nef;*.nrw;*.orf;*.ori;*.pef;*.png;*.pgm;*.ppm;*.ptx;*.pxn;*.raf;*.raw;*.rle;*.rw2;*.rwl;*.sr2;*.srf;*.srw;*.tif;*.tiff;*.wdp;*.webp;*.x3f" },
     };
 
 	if (dialogue == 0) 
